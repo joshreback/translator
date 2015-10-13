@@ -25,3 +25,14 @@ Resolved to store translations in a Redis store.
     - (since they typically are in files that won't be reloaded)
 
 ### I18n Back Ends and Extensions
+
+- The `I18n.translate()` method call delegates to `I18n.backend()`
+- I18n ships with 3 backends:
+  - `I18n::Backend::Simple` keeps translations in an in-memory hash populated by YAML files
+  - `I18n::Backend::KeyValue` uses a key-value store (this is what we'll use)
+    - Required api: a method to read a key, a method to set a value for a key, and a method to retrieve all keys
+  - `I18n::Backend::Chain` allows you to chain several backends as fallbacks
+
+- In this chapter, we'll use two custom I18n extensions:
+  - `I18n::Backend::KeyValue`
+  - `I18n::Backend::Memoize`
