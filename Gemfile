@@ -34,6 +34,17 @@ end
 
 gem 'redis', '~> 3.0.3'
 
+group :test do
+  gem 'capybara', '~> 2.0.0'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-nav'
+end
+
+gem 'sinatra', '~> 1.4.2', require: 'sinatra/base'
+gem 'haml', '~> 4.0.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

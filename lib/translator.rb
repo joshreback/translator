@@ -1,4 +1,6 @@
 module Translator
+  autoload :App, "translator/app"
+
   DATABASES = {
     'development' => 0,
     'test' => 1,
@@ -7,6 +9,11 @@ module Translator
 
   def self.store
     @store ||= Redis.new(db: DATABASES[Rails.env.to_s])
+  end
+
+  def self.reload!
+    store.flushdb
+    I18n.backend.load_translations
   end
 
   class Backend < I18n::Backend::KeyValue

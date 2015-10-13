@@ -36,3 +36,7 @@ Resolved to store translations in a Redis store.
 - In this chapter, we'll use two custom I18n extensions:
   - `I18n::Backend::KeyValue`
   - `I18n::Backend::Memoize`
+
+### Rails and Sinatra
+
+-
