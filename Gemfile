@@ -45,6 +45,8 @@ end
 
 gem 'sinatra', '~> 1.4.2', require: 'sinatra/base'
 gem 'haml', '~> 4.0.2'
+
+gem 'devise', '~> 3.0.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
